@@ -6,13 +6,13 @@ terraform {
   }
 
   backend "gcs" {
-    bucket  = "nap-devops-nonprod-tf-module"
+    bucket  = "jasbirtestproj-tf-module"
     prefix  = "tf-module-gcp-vm"
   }  
 }
 
 provider "google" {  
-  project     = "nap-devops-nonprod"
+  project     = "jasbirtestproj"
   region      = "asia-southeast1"
 }
 
@@ -30,7 +30,7 @@ module "compute-gcp-vm-00" {
   compute_seq     = ""
   vm_tags         = ["unittest-terraform"]
   #vm_service_account = "devops-cicd@its-artifact-commons.iam.gserviceaccount.com"
-  boot_disk_image  = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20220204"
+  boot_disk_image  = "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20230104"
   public_key_file  = "D:/id_rsa.pub"
   vm_machine_type  = "n1-standard-1"
   vm_machine_zone  = "asia-southeast1-b"
